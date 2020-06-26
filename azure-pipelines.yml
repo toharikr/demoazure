@@ -70,7 +70,7 @@ stages:
       inputs:
          mavenPomFile: 'pom.xml'
          publishJUnitResults: true
-         testResultsFiles: '**/surefire-reports/TEST-*.xml'
+         testResultsFiles: '$(Pipeline.Workspace)/TEST-*.xml'
          javaHomeOption: 'JDKVersion'
          mavenVersionOption: 'Default'
          mavenAuthenticateFeed: false
