@@ -16,7 +16,7 @@ public class Application {
     @RequestMapping("/")
     public String home() {
         
-        return "Hello World! Welcome to AKS Updated with Sonarclouds in Azuredevops66!";
+        return "Hello World! Welcome to AKS";
     }
 
     public static void main(String[] args) {
