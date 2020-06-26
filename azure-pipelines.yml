@@ -65,7 +65,17 @@ stages:
     - task: SonarCloudPublish@1
       inputs:
           pollingTimeoutSec: '300'
-          
+
+    - task: Maven@3
+      inputs:
+         mavenPomFile: 'pom.xml'
+         publishJUnitResults: true
+         testResultsFiles: '**/surefire-reports/TEST-*.xml'
+         javaHomeOption: 'JDKVersion'
+         mavenVersionOption: 'Default'
+         mavenAuthenticateFeed: false
+         effectivePomSkip: false
+         sonarQubeRunAnalysis: false
     
     - upload: manifests
       artifact: manifests
