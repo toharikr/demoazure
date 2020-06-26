@@ -31,12 +31,21 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-
     - task: SonarCloudPrepare@1
       inputs:
         SonarCloud: 'SonarCloudConnection'
         organization: 'demoazure66'
-        scannerMode: 'Other'
+        scannerMode: 'CLI'
+        configMode: 'manual'
+        cliProjectKey: 'devopsazure66'
+        cliProjectName: 'demoazure'
+        cliSources: '.'
+        
+    #- task: SonarCloudPrepare@1
+    #  inputs:
+    #    SonarCloud: 'SonarCloudConnection'
+    #    organization: 'demoazure66'
+    #    scannerMode: 'Other'
      
     - task: Docker@2
       displayName: Build and push an image to container registry
