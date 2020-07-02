@@ -16,7 +16,7 @@ public class Application {
     @RequestMapping("/")
     public String home() {
         
-        return "Hello World! Welcome to AKS demo day";
+        return "Hello World! Welcome to AKS demo day final run";
     }
 
     public static void main(String[] args) {
