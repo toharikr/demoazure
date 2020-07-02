@@ -66,16 +66,16 @@ stages:
       inputs:
           pollingTimeoutSec: '300'
 
-    - task: Maven@3
-      inputs:
-         mavenPomFile: 'pom.xml'
-         publishJUnitResults: true
-         testResultsFiles: '$(Pipeline.Workspace)/TEST-*.xml'
-         javaHomeOption: 'JDKVersion'
-         mavenVersionOption: 'Default'
-         mavenAuthenticateFeed: false
-         effectivePomSkip: false
-         sonarQubeRunAnalysis: false
+#     - task: Maven@3
+#       inputs:
+#          mavenPomFile: 'pom.xml'
+#          publishJUnitResults: true
+#          testResultsFiles: '$(Pipeline.Workspace)/TEST-*.xml'
+#          javaHomeOption: 'JDKVersion'
+#          mavenVersionOption: 'Default'
+#          mavenAuthenticateFeed: false
+#          effectivePomSkip: false
+#          sonarQubeRunAnalysis: false
     
     - upload: manifests
       artifact: manifests
